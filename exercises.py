@@ -24,7 +24,35 @@
 #         print("Invalid choice!")
 
 
-user_input = input('input anything please:')
-reversed_sentence = user_input.split()[::-1]
-reversed_sentence = ' '.join(reversed_sentence)
-print(f'reversed senetnce is:, {reversed_sentence}')
+# user_input = input('input anything please:')
+# reversed_sentence = user_input.split()[::-1]
+# reversed_sentence = ' '.join(reversed_sentence)
+# print(f'reversed senetnce is:, {reversed_sentence}')
+
+
+# # Original text
+# text = "I am a boy. I am 29 years old."
+
+# # Split the text into sentences
+# sentences = text.split(". ")
+
+# # Reverse the order of sentences
+# reversed_sentences = ". ".join(sentences[::-1])
+
+# # Add a period at the end if it was removed
+# if not reversed_sentences.endswith("."):
+#     reversed_sentences += "."
+
+# print(reversed_sentences)
+
+
+# clea
+import qrcode
+data = input('Enter your URL:')
+filename = input('Enter your file name:')
+qr = qrcode.QRCode(box_size=10, border=4)
+qr.add_data(data)
+image = qr.make_image(fill='black', back_color='white')
+
+image.save(filename)
+print(f"QR code saved as {filename}")
